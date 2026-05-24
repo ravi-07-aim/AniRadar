@@ -28,12 +28,12 @@ export default function App() {
     try {
       let url = "";
       if (query.trim()) {
-        url = `http://127.0.0.1:8000/recommend?anime=${query}`;
+        url = `https://aniradar-r8f9.onrender.com/recommend?anime=${query}`;
         if (selectedGenres.length > 0) {
           url += `&genre=${selectedGenres[0]}`;
         }
       } else {
-        url = `http://127.0.0.1:8000/recommend?genre=${selectedGenres[0]}`;
+        url = `https://aniradar-r8f9.onrender.com/recommend?genre=${selectedGenres[0]}`;
       }
 
       const res = await fetch(url);
@@ -79,7 +79,7 @@ export default function App() {
     setLoading(true);
     setSearched(true);
     try {
-      const res = await fetch(`http://127.0.0.1:8000/recommend?genre=action`);
+      const res = await fetch(`https://aniradar-r8f9.onrender.com/recommend?genre=action`);
       const data = await res.json();
       let recs = data.recommendations.sort((a, b) => b.rating - a.rating);
       setResults(recs.slice(0, parseInt(showCount)));
