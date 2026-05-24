@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function AnimeCard({ name, genre, rating, image_url, index = 0 }) {
+export default function AnimeCard({ name, genre, rating, image_url}) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const ratingColor = rating >= 8 ? "#22c55e" : rating >= 7 ? "#eab308" : "#ef4444";
